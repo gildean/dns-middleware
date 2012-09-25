@@ -28,7 +28,7 @@ module.exports = function (req, res, next) {
   });
 
   dnsReq.on('end', function () {
-      var delta = ((Date.now()) - start).toString() + 'ms',
+      var delta = ((Date.now()) - start),
           answer = {};
       if (querydata.error) {
           answer = querydata.error;
