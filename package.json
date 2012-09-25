@@ -1,0 +1,28 @@
+{
+  "name": "dns-middleware",
+  "version": "0.1.0",
+  "description": "DNS-lookup middleware for connect/express",
+  "homepage": "https://github.com/gildean/dns-middleware",
+  "keywords": [
+    "connect",
+    "express",
+    "middleware",
+    "dns"
+  ],
+  "author": "Olli Kankare (olli@salaliitto.com) <http://julkinen.salaliitto.com>",
+  "main": "dnslookup.js",
+  "dependencies": {
+    "native-dns": ">= 0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gildean/dns-middleware.git"
+  },
+  "bugs": {
+    "url": "http://github.com/gildean/dns-middleware/issues"
+  },
+  "engine": {
+    "node": ">= 0.6.0"
+  },
+  "license": "DWTFYW"
+}
