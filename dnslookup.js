@@ -12,18 +12,24 @@ module.exports = function (req, res, next) {
             question: question,
             server: { address: queryReq.server.toString() || '8.8.8.8' },
             cache: false,
-            timeout: 1000
+            timeout: 2000
         });
 
   dnsReq.on('timeout', function () {
-      querydata.error = 'Timeout';
+      querydata.error = [{
+        error: "Timeout"
+      }];
   });
 
   dnsReq.on('message', function (err, answer) {
-      if (answer.answer === '') {
-          querydata.address = 'No records found!';
-      } else {
+      if (!err && answer.answer.length > 0) {
           querydata.address = answer.answer;
+      } else if (answer.answer.length === 0) {
+          querydata.error = [{
+            error: "No records found"
+          }];
+      } else {
+          querydata.error = err;
       }
   });
 
@@ -35,6 +41,7 @@ module.exports = function (req, res, next) {
       } else { 
           answer = querydata.address;
       }
+      console.log(answer);
       req.data = JSON.stringify({ answer: answer, time: delta });
       next();
   });

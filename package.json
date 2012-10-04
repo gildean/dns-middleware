@@ -1,6 +1,6 @@
 {
   "name": "dns-middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DNS-lookup middleware for connect/express",
   "homepage": "https://github.com/gildean/dns-middleware",
   "keywords": [
