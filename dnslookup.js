@@ -41,7 +41,6 @@ module.exports = function (req, res, next) {
       } else { 
           answer = querydata.address;
       }
-      console.log(answer);
       req.data = JSON.stringify({ answer: answer, time: delta });
       next();
   });
